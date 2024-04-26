@@ -1,0 +1,124 @@
+/* General CSS Properties */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f1e8c0 0%, #d1a566 100%);
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    background-color: rgba(181, 180, 179, 0.5);
+    mix-blend-mode: multiply;
+    z-index: 1;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+    opacity: 0;
+}
+
+.text {
+    font-family: "Bitter", serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
+}
+
+/* Landing Home Page CSS Properties */
+.homeContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('Images/homeBG.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.navContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.navContainer-scrolled {
+    background-color: #29282D;
+}
+
+.navLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.navLinks a {
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navLinks a:hover {
+    color: #FFD700;
+}
+
+
+#mainTitle {
+    text-align: center;
+    margin: 0px;
+    padding: 5px;
+    width: fit-content;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 8em;
+    /* Typing effect */
+    white-space: nowrap;
+    border-right: 0.15em solid white;
+    animation: blink 1.2s step-end infinite;
+        
+}
+
+/* Keyframes for the cursor blink effect */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#watchFilmBtn {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    font-weight: 500;
+}
