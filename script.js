@@ -132,3 +132,31 @@ function closeOverlay(overlayId) {
     }, 500); // Wait for the fade out to complete
 }
 
+// This function is for opening the About Overlay when clicked on the about button
+function openDiffOverlay(overlayId) {
+    document.querySelector('.navContainer').style.opacity = 0;
+    document.getElementById('diffVideo').style.opacity = 0;
+
+    // Then, display the specified overlay after the transitions
+    setTimeout(function () {
+        const overlay = document.getElementById(overlayId);
+        overlay.style.display = 'flex';
+        setTimeout(function () {
+            overlay.style.opacity = 1;
+        }, 10); // Allows CSS to recognize the display change before beginning transition
+    }, 400); // Wait for the fade out to complete
+}
+
+// This function closes a specified overlay
+function closeDiffOverlay(overlayId) {
+    const overlay = document.getElementById(overlayId);
+    overlay.style.opacity = 0;
+
+    setTimeout(function () {
+        overlay.style.display = 'none';
+        // Restore the opacity of other elements after the overlay has faded out and been hidden
+        document.querySelector('.navContainer').style.opacity = 1;
+        document.getElementById('diffVideo').style.opacity = 1;
+    }, 500); // Wait for the fade out to complete
+}
+

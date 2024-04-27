@@ -23,8 +23,8 @@
         <div class="navContainer">
             <div class="navLinks">
                 <a href="index.html" class="text">Home</a>
-                <a href="javascript:void(0)" onclick="openOverlay('aboutOverlay')" class="text">About</a>
-                <a href="javascript:void(0)" onclick="openOverlay('filmsOverlay')" class="text">Scenes</a>
+                <a href="javascript:void(0)" onclick="openDiffOverlay('aboutOverlay')" class="text">About</a>
+                <a href="javascript:void(0)" onclick="openDiffOverlay('filmsOverlay')" class="text">Scenes</a>
                 <a href="bts.html" class="text">Behind The Scenes</a>
             </div>
         </div>
@@ -37,7 +37,7 @@
     </div>
 
     <div id="aboutOverlay">
-        <a href="javascript:void(0)" onclick="closeOverlay('aboutOverlay')" class="closeBtn">X</a>
+        <a href="javascript:void(0)" onclick="closeDiffOverlay('aboutOverlay')" class="closeBtn">X</a>
         <h2 class="text aboutHeader">About the Film</h2>
         <p class="text aboutParagraph">"Sharing Silence" is an interactive film that delves into the life of a musician, who
             grapples
@@ -87,14 +87,14 @@
     </div>
     
     <div id="filmsOverlay">
-        <a href="javascript:void(0)" onclick="closeOverlay('filmsOverlay')" class="closeBtn">X</a>
+        <a href="javascript:void(0)" onclick="closeDiffOverlay('filmsOverlay')" class="closeBtn">X</a>
         <h2 class="text aboutHeader">Scenes:</h2>
         <div class="films">
-            <a href="index.html">Beginning</a>
-            <a href="choice1a.html">Choice 1a: Help Him</a>
-            <a href="choice1b.html">Choice 1b: Leave Him Be</a>
-            <a href="choice2a.html">Chpoce 2a: Stay with them</a>
-            <a href="choice2b.html">Choice 2b: Run away</a>
+            <a href="index.html" class="text filmBox">Beginning</a>
+            <a href="choice1a.html" class="text filmBox">Choice 1a: Help Him Out</a>
+            <a href="choice1b.html" class="text filmBox">Choice 1b: Leave Him Alone</a>
+            <a href="choice2a.html" class="text filmBox">Choice 2a: Stay with them</a>
+            <a href="choice2b.html" class="text filmBox">Choice 2b: Run away from them</a>
         </div>
     </div>
 
