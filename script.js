@@ -1,4 +1,3 @@
-
 // This function is called when the webpage loads: 
 document.addEventListener('DOMContentLoaded', () => {
     const cursorFollower = document.createElement('div');
@@ -21,6 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorFollower.style.width = `${size}px`;   // Grow to final size
             cursorFollower.style.height = `${size}px`;  // Grow to final size
             cursorFollower.style.transform = `translate(-50%, -50%) scale(1)`; // Scale up smoothly
+
+            // Check if the hovered element is the close button, if so make it white
+            if (link.classList.contains('closeBtn', 'contact-icons')) {
+                cursorFollower.style.backgroundColor = 'rgba(255, 255, 255, 0.5)'; 
+                cursorFollower.style.mixBlendMode = "normal";
+            } else {
+                cursorFollower.style.backgroundColor = 'rgba(181, 180, 179, 0.5)'; 
+                cursorFollower.style.mixBlendMode = "multiply";
+            }
+
             document.addEventListener('mousemove', moveCursorFollower);
         });
 
@@ -61,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // This is for when the user scrolls, the nav container adds black bar property to it
     const navContainer = document.querySelector('.navContainer');
     window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) { // Adjust this value based on your needs
+        if (window.scrollY > 50) { 
             navContainer.classList.add('navContainer-scrolled');
         } else {
             navContainer.classList.remove('navContainer-scrolled');
@@ -90,3 +99,32 @@ const mainTitle = document.getElementById('mainTitle');
 document.addEventListener('DOMContentLoaded', function () {
     typeEffect(mainTitle, 250); 
 });
+
+// This function is for opening the About Overlay when clicked on the about button
+function openOverlay() {
+    // First, reduce the opacity of the existing elements
+    document.getElementById('mainTitle').style.opacity = 0;
+    document.querySelector('.navContainer').style.opacity = 0;
+    document.getElementById('watchFilmBtn').style.opacity = 0;
+
+    // Then, after their opacity transitions complete, display the overlay
+    setTimeout(function () {
+        document.getElementById('aboutOverlay').style.display = 'flex';
+        setTimeout(function () {
+            document.getElementById('aboutOverlay').style.opacity = 1;
+        }, 10); // Allows CSS to recognize the display change before beginning transition
+    }, 400); // Wait for the fade out to complete
+}
+
+function closeOverlay() {
+    document.getElementById('aboutOverlay').style.opacity = 0;
+
+    setTimeout(function () {
+        document.getElementById('aboutOverlay').style.display = 'none';
+        // Restore the opacity of other elements after the overlay has faded out and been hidden
+        document.getElementById('mainTitle').style.opacity = 1;
+        document.querySelector('.navContainer').style.opacity = 1;
+        document.getElementById('watchFilmBtn').style.opacity = 1;
+    }, 500); // Wait for the fade out to complete
+}
+

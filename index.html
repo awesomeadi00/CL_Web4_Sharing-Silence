@@ -20,8 +20,8 @@
         <div class="navContainer">
             <div class="navLinks">
                 <a href=".homeContainer" class="text">Home</a>
-                <a href=".aboutContainer" class="text">About</a>
-                <a href=".filmContainer" class="text">Film</a>
+                <a href="javascript:void(0)" onclick="openOverlay()" class="text">About</a>
+                <a href="#video" class="text">Film</a>
                 <a href=".btsContainer" class="text">Behind The Scenes</a>
             </div>
         </div>
@@ -29,13 +29,64 @@
         <h1 class="text" id="mainTitle">Sharing Silence</h1>
     
         <div class="buttonContainer">
-            <a href=".videoContainer">
+            <a href="#video">
                 <button class="text" id="watchFilmBtn">Watch Film</button>
             </a>
         </div>
-
     </div>
-    <div style="height: 500px;"></div>
+
+    <!-- Overlay content -->
+    <div id="aboutOverlay">
+        <a href="javascript:void(0)" onclick="closeOverlay()" class="closeBtn">X</a>
+        <h2 class="text aboutHeader">About the Film</h2>
+        <p class="text aboutParagraph">"Sharing Silence" is an interactive film that delves into the life of a musician, who grapples
+        with the gradual loss of his hearing. As his world begins to unravel, he becomes overshadowed by fear and panic as his hearing deteriorates. 
+        Despite the unwavering support of his friends, he feels isolated in his struggle against silence, teetering between acceptance and denial.
+            
+        Through immersive storytelling and interactive decision-making, "Sharing Silence" explores themes of resilience,
+        friendship, and the transformative power of human connection. The viewers are empowered to shape his journey through choices and ultimately
+        define his story and discovering the profound beauty that can be found in the quietest moments of life.</p>
+
+        <h2 class="text meetTeamHeader">Meet the Team!</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <p>Adi</p>
+                <div class="contact-icons">
+                    <a href="adityapandhare44@gmail.com"><img src="images/gmail.png" alt="Gmail"></a>
+                    <a href="https://www.github.com/awesomeadi00" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <p>Dachi</p>
+                <div class="contact-icons">
+                    <a href="mailto:dt2307@nyu.edu"><img src="images/gmail.png" alt="Gmail"></a>
+                    <a href="https://github.com/dachi256" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <p>Elora</p>
+                <div class="contact-icons">
+                    <a href="edt7330@nyu.edu"><img src="images/gmail.png" alt="Gmail"></a>
+                    <a href="https://github.com" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <p>Kevin</p>
+                <div class="contact-icons">
+                    <a href="mailto:kc4624@nyu.edu"><img src="images/gmail.png" alt="Gmail"></a>
+                    <a href="https://github.com/kevinchu-linkai" target="_blank"><img src="images/github.png"
+                            alt="GitHub"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="videoContainer">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/BEHeigyRPbI?si=t2BQZ4-d1vzZVS-j"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
 
     <script src="script.js"></script>
 </body>

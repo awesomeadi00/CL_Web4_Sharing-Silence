@@ -3,7 +3,6 @@ body,
 html {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #f1e8c0 0%, #d1a566 100%);
 }
 
 .cursor-follower {
@@ -12,9 +11,9 @@ html {
     height: 0;
     border-radius: 50%;
     pointer-events: none;
-    background-color: rgba(181, 180, 179, 0.5);
+    background-color: rgb(255, 128, 0); 
     mix-blend-mode: multiply;
-    z-index: 1;
+    z-index: 9999;
     transform: translate(-50%, -50%) scale(0);
     transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
     opacity: 0;
@@ -50,10 +49,12 @@ html {
     box-sizing: border-box;
     background-color: transparent;
     transition: background-color 0.3s;
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .navContainer-scrolled {
-    background-color: #29282D;
+    background-color: #29282d80;
 }
 
 .navLinks {
@@ -89,6 +90,7 @@ html {
     transform: translate(-50%, -50%);
     color: white;
     font-size: 8em;
+    transition: opacity 0.5s ease-in-out;
     /* Typing effect */
     white-space: nowrap;
     border-right: 0.15em solid white;
@@ -110,15 +112,163 @@ html {
 
 #watchFilmBtn {
     position: absolute;
-    top: 60%;
+    top: 62%;
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
     border: none;
     border-radius: 20px;
     padding: 15px 30px;
-    font-size: 1em;
+    width: 200px;
+    font-size: 1.2em;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, opacity 0.5s ease-in-out;
     font-weight: 500;
+}
+
+#watchFilmBtn:hover {
+    background-color: #075929;
+    color: white;
+}
+
+/* About Overlay CSS Properties */
+#aboutOverlay {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 95%;
+    height: 90%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: white;
+    overflow: auto;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.closeBtn {
+    text-decoration: none;
+    position: absolute;
+    top: 5.5%;
+    right: 3%;
+    font-size: 30px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: white;
+    z-index: 20;
+}
+
+.aboutHeader {
+    position: absolute;
+    top: 0%;
+    left: 3%;
+    font-size: 3em;
+}
+
+.aboutParagraph {
+    position: absolute;
+    top: 15%;
+    left: 3%;
+    text-align: left;
+    font-size: 1.5em;
+    width: 92%;
+    line-height: 1.5em;
+}
+
+.meetTeamHeader {
+    position: absolute;
+    top: 51%;
+    left: 3%;
+    font-size: 3em;
+}
+
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 450px;
+}
+
+.team-member {
+    width: 200px;
+    margin: 20px;
+    padding: 30px;
+    background-color: #222222a5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member p {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Bitter", serif;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.contact-icons a:hover {
+    background-color: #f1f1f1;
+    cursor: url('images/key_glow.png'), auto;
+}
+
+.contact-icons img {
+    width: 24px;
+    height: 24px;
+    margin: 8px;
+}
+
+/* Video Frame CSS Properties */
+.videoContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #1b100c 0%, #002c15 100%)
+}
+
+.videoContainer iframe {
+    position: absolute;
+    width: 70vw;
+    height: 70vw;
+    max-width: 100%;
+    max-height: 80vh;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    z-index: 3;
 }
