@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // This is for spawning feathers in random orientations and sizes in the videoContainer
+    // This is for spawning balls in random orientations and sizes in the videoContainer
     // Ensure that there is at least one videoContainer on the page
     const videoContainers = document.querySelectorAll('.videoContainer');
     if (videoContainers.length === 0) return;
@@ -148,7 +148,7 @@ function openOverlay(overlayId) {
     document.getElementById('mainTitle').style.opacity = 0;
     document.querySelector('.navContainer').style.opacity = 0;
     document.getElementById('watchFilmBtn').style.opacity = 0;
-    document.getElementById('video').style.opacity = 0;
+    document.getElementById('player').style.opacity = 0;
 
     // Then, display the specified overlay after the transitions
     setTimeout(function () {
@@ -171,14 +171,14 @@ function closeOverlay(overlayId) {
         document.getElementById('mainTitle').style.opacity = 1;
         document.querySelector('.navContainer').style.opacity = 1;
         document.getElementById('watchFilmBtn').style.opacity = 1;
-        document.getElementById('video').style.opacity = 1;
+        document.getElementById('player').style.opacity = 1;
     }, 500); // Wait for the fade out to complete
 }
 
 // This function is for opening the About Overlay when clicked on the about button on every other page other than the index.html
 function openDiffOverlay(overlayId) {
     document.querySelector('.navContainer').style.opacity = 0;
-    document.getElementById('diffVideo').style.opacity = 0;
+    document.getElementById('player').style.opacity = 0;
 
     // Then, display the specified overlay after the transitions
     setTimeout(function () {
@@ -199,6 +199,6 @@ function closeDiffOverlay(overlayId) {
         overlay.style.display = 'none';
         // Restore the opacity of other elements after the overlay has faded out and been hidden
         document.querySelector('.navContainer').style.opacity = 1;
-        document.getElementById('diffVideo').style.opacity = 1;
+        document.getElementById('player').style.opacity = 1;
     }, 500); // Wait for the fade out to complete
 }

@@ -326,7 +326,18 @@ html {
     background: linear-gradient(to bottom, #1b100c 0%, #002c15 100%)
 }
 
-.videoContainer iframe {
+.diffVideoContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.videoContainer iframe, .diffVideoContainer iframe {
     position: absolute;
     width: 70vw;
     height: 70vw;
@@ -338,8 +349,35 @@ html {
     z-index: 3;
 }
 
-#video, #diffVideo {
+#video, #player {
     transition: opacity 0.5s ease-in-out;
+}
+
+#YTbuttonContainer {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 60%;
+    left: 0;
+    padding-bottom: 10px;
+    z-index: 100;
+}
+
+#YTbuttonContainer button {
+    margin: 5px;
+    font-family: "Bitter", serif;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #075929;
+    color: white;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#YTbuttonContainer button:hover {
+    background-color: #15c45e;
 }
 
 
@@ -357,7 +395,7 @@ html {
     background-repeat: no-repeat;
 }
 
-#diffVideo {
+#player {
     position: absolute;
     width: 70vw;
     height: 70vw;
