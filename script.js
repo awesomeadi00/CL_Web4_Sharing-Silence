@@ -76,6 +76,49 @@ document.addEventListener('DOMContentLoaded', () => {
             navContainer.classList.remove('navContainer-scrolled');
         }
     });
+
+
+    // This is for spawning feathers in random orientations and sizes in the videoContainer
+    // Ensure that there is at least one videoContainer on the page
+    const videoContainers = document.querySelectorAll('.videoContainer');
+    if (videoContainers.length === 0) return;
+
+    // Use the first videoContainer for this example
+    const vidContainer = videoContainers[0];
+
+    const rows = 5;
+    const cols = 5;
+
+    // Define separate horizontal and vertical margins
+    const horizontalMargin = 25; // Horizontal margin in pixels
+    const verticalMargin = 75;    // Vertical margin in pixels
+
+    // Adjust cell width and height calculations to account for these margins
+    const cellWidth = (vidContainer.clientWidth - 2 * horizontalMargin) / cols;
+    const cellHeight = (vidContainer.clientHeight - 2 * verticalMargin) / rows;
+
+    for (let i = 0; i < rows * cols; i++) {
+        const ball = document.createElement('div');
+        ball.className = 'blurry-ball';
+
+        const col = i % cols;
+        const row = Math.floor(i / cols);
+
+        // Calculate random position within the cell, including margins
+        const left = horizontalMargin + col * cellWidth + Math.random() * cellWidth;
+        const top = verticalMargin + row * cellHeight + Math.random() * cellHeight;
+
+        const ballSize = Math.floor(Math.random() * (120 - 20 + 1)) + 20;
+        ball.style.width = `${ballSize}px`;
+        ball.style.height = `${ballSize}px`;
+
+        ball.style.position = 'absolute';
+        ball.style.left = `${left}px`;
+        ball.style.top = `${top}px`;
+
+        vidContainer.appendChild(ball);
+
+    }
 });
 
 // This function is for executing the typing effect which would be applied to the title
@@ -132,7 +175,7 @@ function closeOverlay(overlayId) {
     }, 500); // Wait for the fade out to complete
 }
 
-// This function is for opening the About Overlay when clicked on the about button
+// This function is for opening the About Overlay when clicked on the about button on every other page other than the index.html
 function openDiffOverlay(overlayId) {
     document.querySelector('.navContainer').style.opacity = 0;
     document.getElementById('diffVideo').style.opacity = 0;
@@ -147,7 +190,7 @@ function openDiffOverlay(overlayId) {
     }, 400); // Wait for the fade out to complete
 }
 
-// This function closes a specified overlay
+// This function closes a specified overlay on every other page except the index.html page
 function closeDiffOverlay(overlayId) {
     const overlay = document.getElementById(overlayId);
     overlay.style.opacity = 0;

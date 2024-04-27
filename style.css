@@ -26,6 +26,18 @@ html {
     font-style: normal;
 }
 
+.blurry-ball {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(86, 205, 118, 0.6);
+    border-radius: 50%;
+    filter: blur(8px);
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px 5px rgba(255, 250, 236, 0.4);
+}
+
 /* Landing Home Page CSS Properties */
 .homeContainer {
     position: relative;
