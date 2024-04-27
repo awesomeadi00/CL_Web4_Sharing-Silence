@@ -87,10 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const vidContainer = videoContainers[0];
 
     const rows = 5;
-    const cols = 5;
+    const cols = 6;
 
     // Define separate horizontal and vertical margins
-    const horizontalMargin = 25; // Horizontal margin in pixels
+    const horizontalMargin = 50; // Horizontal margin in pixels
     const verticalMargin = 75;    // Vertical margin in pixels
 
     // Adjust cell width and height calculations to account for these margins
@@ -202,4 +202,3 @@ function closeDiffOverlay(overlayId) {
         document.getElementById('diffVideo').style.opacity = 1;
     }, 500); // Wait for the fade out to complete
 }
-
