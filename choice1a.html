@@ -120,7 +120,9 @@
                 width: '640',
                 videoId: 'tJ6aB6G3W1w',
                 playerVars: {
-                    'playsinline': 1
+                    'playsinline': 1,
+                    'rel': 0,
+                    'modestbranding': 1
                 },
                 events: {
                     'onReady': onPlayerReady,
@@ -132,6 +134,7 @@
         // The API will call this function when the video player is ready.
         function onPlayerReady(event) {
             event.target.playVideo();
+            event.target.setPlaybackQuality('highres');
         }
 
         // 5. The API calls this function when the player's state changes.
