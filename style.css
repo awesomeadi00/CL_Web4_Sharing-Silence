@@ -248,6 +248,59 @@ html {
     margin: 8px;
 }
 
+/* Film Paths CSS Properties */
+#filmsOverlay {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 95%;
+    height: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: white;
+    overflow: auto;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.films {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    align-items: center; 
+    margin-top: 75px;
+}
+
+.filmBox {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    height: 300px;
+    width: 200px;
+    margin: 20px;
+    padding: 30px;
+    background-color: #222222a5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    box-sizing: border-box;
+}
+
+.filmBox:hover {
+    transform: translateY(-10px);
+}
+
 /* Video Frame CSS Properties */
 .videoContainer {
     position: relative;
@@ -262,6 +315,36 @@ html {
 }
 
 .videoContainer iframe {
+    position: absolute;
+    width: 70vw;
+    height: 70vw;
+    max-width: 100%;
+    max-height: 80vh;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    z-index: 3;
+}
+
+#video, #diffVideo {
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+.diffHomeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('Images/homeBG.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#diffVideo {
     position: absolute;
     width: 70vw;
     height: 70vw;

@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     //This is to ensure there is smooth scrolling when clicked on a hyperlink from the nav Container or the watch film button. 
-    document.querySelectorAll('.navContainer a, .buttonContainer a').forEach(anchor => {
+    document.querySelectorAll('.buttonContainer a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
@@ -101,30 +101,34 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // This function is for opening the About Overlay when clicked on the about button
-function openOverlay() {
-    // First, reduce the opacity of the existing elements
+function openOverlay(overlayId) {
     document.getElementById('mainTitle').style.opacity = 0;
     document.querySelector('.navContainer').style.opacity = 0;
     document.getElementById('watchFilmBtn').style.opacity = 0;
+    document.getElementById('video').style.opacity = 0;
 
-    // Then, after their opacity transitions complete, display the overlay
+    // Then, display the specified overlay after the transitions
     setTimeout(function () {
-        document.getElementById('aboutOverlay').style.display = 'flex';
+        const overlay = document.getElementById(overlayId);
+        overlay.style.display = 'flex';
         setTimeout(function () {
-            document.getElementById('aboutOverlay').style.opacity = 1;
+            overlay.style.opacity = 1;
         }, 10); // Allows CSS to recognize the display change before beginning transition
     }, 400); // Wait for the fade out to complete
 }
 
-function closeOverlay() {
-    document.getElementById('aboutOverlay').style.opacity = 0;
+// This function closes a specified overlay
+function closeOverlay(overlayId) {
+    const overlay = document.getElementById(overlayId);
+    overlay.style.opacity = 0;
 
     setTimeout(function () {
-        document.getElementById('aboutOverlay').style.display = 'none';
+        overlay.style.display = 'none';
         // Restore the opacity of other elements after the overlay has faded out and been hidden
         document.getElementById('mainTitle').style.opacity = 1;
         document.querySelector('.navContainer').style.opacity = 1;
         document.getElementById('watchFilmBtn').style.opacity = 1;
+        document.getElementById('video').style.opacity = 1;
     }, 500); // Wait for the fade out to complete
 }
 

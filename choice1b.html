@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +11,15 @@
     <script src="https://kit.fontawesome.com/1f1a295127.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <!-- This is the landing page section of the website -->
-    <div class="homeContainer">
+    <div class="diffHomeContainer">
         <div class="navContainer">
             <div class="navLinks">
                 <a href="index.html" class="text">Home</a>
@@ -25,35 +28,37 @@
                 <a href="bts.html" class="text">Behind The Scenes</a>
             </div>
         </div>
-    
-        <h1 class="text" id="mainTitle">Sharing Silence</h1>
-    
-        <div class="buttonContainer">
-            <a href="#video">
-                <button class="text" id="watchFilmBtn">Watch Film</button>
-            </a>
-        </div>
+
+        <iframe id="diffVideo" width="560" height="315"
+            src="https://www.youtube.com/embed/BEHeigyRPbI?si=t2BQZ4-d1vzZVS-j" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 
-    <!-- This is an overlay which will show information about the film and us -->
     <div id="aboutOverlay">
         <a href="javascript:void(0)" onclick="closeOverlay('aboutOverlay')" class="closeBtn">X</a>
         <h2 class="text aboutHeader">About the Film</h2>
-        <p class="text aboutParagraph">"Sharing Silence" is an interactive film that delves into the life of a musician, who grapples
-        with the gradual loss of his hearing. As his world begins to unravel, he becomes overshadowed by fear and panic as his hearing deteriorates. 
-        Despite the unwavering support of his friends, he feels isolated in his struggle against silence, teetering between acceptance and denial.
-            
-        Through immersive storytelling and interactive decision-making, "Sharing Silence" explores themes of resilience,
-        friendship, and the transformative power of human connection. The viewers are empowered to shape his journey through choices and ultimately
-        define his story and discovering the profound beauty that can be found in the quietest moments of life.</p>
-
+        <p class="text aboutParagraph">"Sharing Silence" is an interactive film that delves into the life of a musician, who
+            grapples
+            with the gradual loss of his hearing. As his world begins to unravel, he becomes overshadowed by fear and panic
+            as his hearing deteriorates.
+            Despite the unwavering support of his friends, he feels isolated in his struggle against silence, teetering
+            between acceptance and denial.
+    
+            Through immersive storytelling and interactive decision-making, "Sharing Silence" explores themes of resilience,
+            friendship, and the transformative power of human connection. The viewers are empowered to shape his journey
+            through choices and ultimately
+            define his story and discovering the profound beauty that can be found in the quietest moments of life.</p>
+    
         <h2 class="text meetTeamHeader">Meet the Team!</h2>
         <div class="team-members">
             <div class="team-member">
                 <p>Adi</p>
                 <div class="contact-icons">
                     <a href="adityapandhare44@gmail.com"><img src="images/gmail.png" alt="Gmail"></a>
-                    <a href="https://www.github.com/awesomeadi00" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+                    <a href="https://www.github.com/awesomeadi00" target="_blank"><img src="images/github.png"
+                            alt="GitHub"></a>
                 </div>
             </div>
             <div class="team-member">
@@ -80,27 +85,20 @@
             </div>
         </div>
     </div>
-
-    <!-- This is an overlay which will show each of the films -->
+    
     <div id="filmsOverlay">
         <a href="javascript:void(0)" onclick="closeOverlay('filmsOverlay')" class="closeBtn">X</a>
         <h2 class="text aboutHeader">Scenes:</h2>
         <div class="films">
-            <a href="index.html" class="text filmBox">Beginning</a>
-            <a href="choice1a.html" class="text filmBox">Choice 1a: Help Him Out</a>
-            <a href="choice1b.html" class="text filmBox">Choice 1b: Leave Him Alone</a>
-            <a href="choice2a.html" class="text filmBox">Choice 2a: Stay with them</a>
-            <a href="choice2b.html" class="text filmBox">Choice 2b: Run away from them</a>
+            <a href="index.html">Beginning</a>
+            <a href="choice1a.html">Choice 1a: Help Him</a>
+            <a href="choice1b.html">Choice 1b: Leave Him Be</a>
+            <a href="choice2a.html">Chpoce 2a: Stay with them</a>
+            <a href="choice2b.html">Choice 2b: Run away</a>
         </div>
-    </div>
-
-    <div class="videoContainer">
-        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/BEHeigyRPbI?si=t2BQZ4-d1vzZVS-j"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
